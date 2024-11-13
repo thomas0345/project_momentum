@@ -13,16 +13,16 @@ git clone https://github.com/thomas0345/project_momentum.git
 
 second, the user is asked to navigate to the project folder using:
 ```bash
-cd project-momentum
+cd project_momentum
 ```
 
 third, lets build a Docker image for the project using:
 ```bash
-docker build -t project-momentum .
+docker build -t project_momentum .
 ```
 fourth, lets run the docker container using:
 ```bash
-docker run -it --rm -p 8888:8888 project-momentum
+docker run -it --rm -p 8888:8888 project_momentum
 ```
 fifth, access the notebook for a walk through under:
 [Jupyter Notebook](http://localhost:8888)
