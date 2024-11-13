@@ -1,15 +1,6 @@
-black
-flake8
-ipython
-isort
-jupyter
-jupyterlab
-matplotlib
-notebook
 numpy
 pandas
-pip
-python-dotenv
-scikit-learn
+matplotlib
 yfinance
 ipywidgets
+jupyter
