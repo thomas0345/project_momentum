@@ -14,7 +14,9 @@ COPY momentum_notebook.ipynb /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Start Jupyter Notebook server (shutdown after 1h)
-CMD ["sh", "-c", "jupyter notebook --ip=127.0.0.1 --port=8888 --no-browser --allow-root --NotebookApp.shutdown_no_activity_timeout=3600 /app/momentum_notebook.ipynb"]
+CMD ["sh", "-c", "jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='201518072d31a07b26c1e6caeb44bb846b86093ea1320692' /app/momentum_notebook.ipynb"]
+
+
 
 
 
