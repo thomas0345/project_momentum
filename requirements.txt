@@ -13,4 +13,3 @@ python-dotenv
 scikit-learn
 yfinance
 ipywidgets
--e .
