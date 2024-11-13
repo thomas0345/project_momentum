@@ -2,32 +2,33 @@
 
 This project aims to explore momentum strategies in different equity markets in order to identify the best lookback period. Further it incorporates several robustness checks to solidify the results.
 
-# requirements
+# Installation Guide
 
 Before running through the following lines in the terminal, make sure docker is installed on your local machine from which you are accessing this project.
 
-first, the user is asked to clone this project on his local machine using:
+first, clone this project to the local machine using:
 ```bash
 git clone https://github.com/thomas0345/project_momentum.git
 ```
 
-second, the user is asked to navigate to the project folder using:
+second, navigate to the project folder using:
 ```bash
 cd project_momentum
 ```
 
-third, lets build a Docker image for the project using:
+third, build a docker image for the project using:
 ```bash
 docker build -t project_momentum .
 ```
-fourth, lets run the docker container using:
+
+fourth, run the docker container using:
 ```bash
-docker run -it --rm -p 8888:8888 project_momentum
+docker run -it --rm -p 0:8888 project_momentum
 ```
-fifth, access the notebook for a walk through under:
-[Jupyter Notebook](http://localhost:8888)
 
+fifth, access the notebook for a walk through, by copying the full URL (including the token) from the terminal and paste it into your browser of choice.
 
+Organization still needs to be finalized!
 
 ## Project Organization
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
