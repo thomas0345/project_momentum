@@ -2,6 +2,7 @@ black
 flake8
 ipython
 isort
+jupyter
 jupyterlab
 matplotlib
 notebook
@@ -10,4 +11,6 @@ pandas
 pip
 python-dotenv
 scikit-learn
+yfinance
+ipywidgets
 -e .

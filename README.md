@@ -1,15 +1,41 @@
 # project_momentum
 
+This project aims to explore momentum strategies in different equity markets in order to identify the best lookback period. Further it incorporates several robustness checks to solidify the results.
+
+# requirements
+
+Before running through the following lines in the terminal, make sure docker is installed on your local machine from which you are accessing this project.
+
+first, the user is asked to clone this project on his local machine using:
+```bash
+git clone https://github.com/thomas0345/project_momentum.git
+```
+
+second, the user is asked to navigate to the project folder using:
+```bash
+cd project-momentum
+```
+
+third, lets build a Docker image for the project using:
+```bash
+docker build -t project-momentum .
+```
+fourth, lets run the docker container using:
+```bash
+docker run -it --rm -p 8888:8888 project-momentum
+```
+fifth, access the notebook for a walk through under:
+[Jupyter Notebook](http://localhost:8888)
+
+
+
+## Project Organization
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-This project aims to explore momentum strategies in different equity markets in order to identify the best lookback period. Further it incorporates several robustness checks to solidify the results.
-
-## Project Organization
-
 ```
-├── LICENSE            <- Open-source license if one is chosen
+├── LICENSE            <- Open-source license
 ├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
 ├── README.md          <- The top-level README for developers using this project.
 ├── data
