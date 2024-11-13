@@ -27,6 +27,7 @@ docker run -it --rm -p 127.0.0.1:8888:8888 project_momentum
 ```
 
 fifth, access the notebook for a walk through, by copying the full URL (including the token) from the terminal and paste it into your browser of choice.
+The URL will start like this:    http://127.0.0.1:8888/tree?token=
 
 Organization still needs to be finalized!
 
