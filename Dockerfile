@@ -21,5 +21,5 @@ COPY reports/paper /app/reports/paper
 # Copy the Jupyter notebook into the container
 COPY momentum_notebook.ipynb /app/
 
-# Default command to run Jupyter Notebook server and LaTeX compilation
-CMD ["sh", "-c", "jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root /app/momentum_notebook.ipynb & pdflatex -output-directory=/app/reports/paper /app/reports/paper/latex_pmp_template.tex"]
+# Default command to first compile LaTeX and then start the Jupyter Notebook server
+CMD ["sh", "-c", "pdflatex -output-directory=/app/reports/paper /app/reports/paper/latex_pmp_template.tex && jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root /app/momentum_notebook.ipynb"]

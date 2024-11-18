@@ -25,6 +25,11 @@ fourth, run the docker container using:
 ```bash
 docker run -it --rm -p 127.0.0.1:8888:8888 project_momentum
 ```
+This command will:
+<ol>
+<li>Compile the LaTeX report (latex_pmp_template.tex), generating a PDF.</li>
+<li>Start the Jupyter Notebook server.</li>
+</ol>
 
 fifth, access the report, by using:
 ```bash
