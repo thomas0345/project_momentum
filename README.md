@@ -23,18 +23,13 @@ docker build -t project_momentum .
 
 fourth, run the docker container using:
 ```bash
-docker run -it --rm -p 127.0.0.1:8888:8888 project_momentum
+docker run -it --rm -p 127.0.0.1:8888:8888 -v $(pwd)/reports/paper:/app/reports/paper project_momentum
 ```
 This command will:
 <ol>
-<li>Compile the LaTeX report (latex_pmp_template.tex), generating a PDF.</li>
-<li>Start the Jupyter Notebook server.</li>
+<li>Compile the LaTeX report (latex_pmp_template.tex), generating a PDF and storing it in your local folder under /reports/paper.</li>
+<li>Start the Jupyter Notebook server, from which you can access the notebook.</li>
 </ol>
-
-fifth, access the report, by using:
-```bash
-docker run -it --rm -p 127.0.0.1:8888:8888 -v $(pwd)/reports/paper:/app/reports/paper project_momentum
-```
 
 fifth, access the notebook for a walk through, by copying the full URL (including the token) from the terminal and paste it into your browser of choice.
 The URL will start like this:    http://127.0.0.1:8888/tree?token=
