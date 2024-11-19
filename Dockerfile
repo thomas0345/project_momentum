@@ -4,22 +4,16 @@ FROM python:3.10-slim
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the requirements.txt file into the container at /app
-COPY requirements.txt /app/
+# Install required packages for Python and LaTeX
+RUN apt-get update && apt-get install -y \
+    texlive-full \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy the momentum notebook into the container
-COPY momentum_notebook.ipynb /app/
+# Copy the entire folder structure into the container
+COPY . /app/
 
-# Install any necessary packages outlined in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+# Install Python dependencies
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
-# Start Jupyter Notebook server with token authentication
-CMD ["sh", "-c", "jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root /app/momentum_notebook.ipynb"]
-
-
-
-
-
-
-
-
+# Default command to first compile LaTeX and then start the Jupyter Notebook server
+CMD ["sh", "-c", "pdflatex -output-directory=/app/reports/paper /app/reports/paper/latex_pmp_template.tex && jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root /app/momentum_notebook.ipynb"]
