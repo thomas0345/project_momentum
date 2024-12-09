@@ -16,7 +16,6 @@ Ensure the following software is installed on your local machine:
 first, clone this project to the local machine using:
 ```bash
 git clone https://github.com/thomas0345/project_momentum.git
-cd project_momentum
 ```
 
 second, navigate to the project folder using:
@@ -31,7 +30,7 @@ docker build -t project_momentum .
 
 fourth, run the docker container using:
 ```bash
-docker run -it --rm -p 127.0.0.1:8888:8888 -p 127.0.0.1:8061:8061 -v $(pwd)/reports/paper:/app/reports/paper project_momentum
+docker run -it --rm -p 127.0.0.1:8888:8888 -p 127.0.0.1:8061:8061 -v $(pwd)/reports:/app/reports project_momentum
 
 ```
 This command will:
