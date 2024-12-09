@@ -4,7 +4,6 @@ matplotlib
 yfinance
 ipywidgets
 jupyter
-os
 tabulate
 dash
 plotly
