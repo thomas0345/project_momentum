@@ -4,11 +4,19 @@ This project aims to explore momentum strategies in different equity markets in 
 
 # Installation Guide
 
-Before running through the following lines in the terminal, make sure docker is installed on your local machine from which you are accessing this project.
+This project contains code to:
+1. Analyze momentum strategies in a notebook
+2. Run an interactive Dash app for exploring NAV visualizations
+3. Generate report in LaTeX
+
+## Prerequisites
+Ensure the following software is installed on your local machine:
+- Docker (latest version): [Install Docker](https://docs.docker.com/get-docker/)
 
 first, clone this project to the local machine using:
 ```bash
 git clone https://github.com/thomas0345/project_momentum.git
+cd project_momentum
 ```
 
 second, navigate to the project folder using:
@@ -23,7 +31,8 @@ docker build -t project_momentum .
 
 fourth, run the docker container using:
 ```bash
-docker run -it --rm -p 127.0.0.1:8888:8888 -v $(pwd)/reports/paper:/app/reports/paper project_momentum
+docker run -it --rm -p 127.0.0.1:8888:8888 -p 127.0.0.1:8061:8061 -v $(pwd)/reports/paper:/app/reports/paper project_momentum
+
 ```
 This command will:
 <ol>
@@ -32,9 +41,10 @@ This command will:
 </ol>
 
 fifth, access the notebook for a walk through, by copying the full URL (including the token) from the terminal and paste it into your browser of choice.
-The URL will start like this:    http://127.0.0.1:8888/tree?token=
+The URL will start like this:    http://127.0.0.1:8888/tree?token=<TOKEN>
 
-Organization still needs to be finalized!
+
+
 
 ## Project Organization
 <a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
