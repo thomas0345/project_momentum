@@ -20,5 +20,5 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 EXPOSE 8888 8061
 
 # Run LaTeX report compilation first, then launch Jupyter Notebook
-CMD pdflatex -output-directory=/app/reports/paper /app/reports/paper/momentum_report.tex && \
+CMD pdflatex -output-directory=/app/reports/paper /app/reports/momentum_report.tex && \
     jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root /app/momentum_notebook.ipynb
