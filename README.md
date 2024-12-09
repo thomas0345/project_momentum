@@ -2,17 +2,23 @@
 
 This project aims to explore momentum strategies in different equity markets in order to identify the best lookback period. Further it incorporates several robustness checks to solidify the results.
 
+# Brief Abstract
+
+
+
+
 # Installation Guide
 
 This project contains code to:
-1. Analyze momentum strategies in a notebook
+1. Analyze momentum strategies step-by-step in a jupyter notebook
 2. Run an interactive Dash app for exploring NAV visualizations
-3. Generate report in LaTeX
+3. Generate report and presentation in LaTeX
 
 ## Prerequisites
 Ensure the following software is installed on your local machine:
 - Docker (latest version): [Install Docker](https://docs.docker.com/get-docker/)
 
+## Terminal Instructions
 first, clone this project to the local machine using:
 ```bash
 git clone https://github.com/thomas0345/project_momentum.git
@@ -45,17 +51,8 @@ sixth, launch the jupyter notebook for an interactive walk through using:
 docker run -it --rm -p 127.0.0.1:8888:8888 -p 127.0.0.1:8061:8061 -v $(pwd):/app project_momentum \
 "jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
 ```
-
-
-
-This command will:
-<ol>
-<li>Compile the LaTeX report (latex_pmp_template.tex), generating a PDF and storing it in your local folder under /reports/paper.</li>
-<li>Start the Jupyter Notebook server, from which you can access the notebook.</li>
-</ol>
-
-fifth, access the notebook for a walk through, by copying the full URL (including the token) from the terminal and paste it into your browser of choice.
-The URL will start like this:    http://127.0.0.1:8888/tree?token=<TOKEN>
+and access the notebook for a walk through, by copying the full URL (including the token) from the terminal and paste it into your browser of choice.
+The URL will look like this:    http://127.0.0.1:8888/tree?token=<TOKEN>
 
 
 
@@ -66,52 +63,29 @@ The URL will start like this:    http://127.0.0.1:8888/tree?token=<TOKEN>
 </a>
 
 ```
-├── LICENSE            <- Open-source license
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
+├── LICENSE                                 <- Open-source license
+├── README.md                               <- The top-level README for users, including short summary of the project
 ├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
+│   ├── processed                           <- The processed dataframes are stored in this folder
+│   └── raw                                 <- The original data pulled from the Yfinance API is stored in this folder
 │
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
+├── requirements.txt                        <- The requirements file for reproducing the analysis environment
 │
-├── models             <- Trained and serialized models, model predictions, or model summaries
+├── momentum_notebook.ipynb                 <- A walk-through notebook to explore the data analysis step-by-step
 │
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
+├── Dockerfile                              <- Dockerfile containing setup to run whole project through docker implementation
 │
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         project_momentum and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── project_momentum   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes project_momentum a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+├── reports                                 <- Generated analysis in PDF, LaTeX, etc.
+     │
+     ├── paper                              <- Academic-style paper
+     │   ├── figures                        <- Figures used in the LaTeX report
+     │   ├── momentum_report.tex            <- LaTex code in order to compile PDF report
+     │   └── references.bib                 <- References used in the report
+     │
+     └── presentation                       <- Short presentation with most important findings
+         ├── figures                        <- Figures used in the LaTeX report
+         ├── momentum_presentation.tex      <- LaTex code in order to compile PDF presentation
+         └── references.bib                 <- References used in the presentation
 ```
 
 --------
