@@ -8,3 +8,5 @@ os
 tabulate
 dash
 plotly
+scipy
+seaborn
