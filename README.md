@@ -12,10 +12,10 @@ This project aims to explore momentum strategies in different equity markets in 
 This project contains code to:
 1. Analyze momentum strategies step-by-step in a jupyter notebook
 2. Run an interactive Dash app for exploring NAV visualizations
-3. Generate report and presentation in LaTeX
+3. Summarize the results and generate a report and a presentation in LaTeX
 
 ## Prerequisites
-Ensure the following software is installed on your local machine:
+Ensure the Docker is installed on your local machine and that it is running:
 - Docker (latest version): [Install Docker](https://docs.docker.com/get-docker/)
 
 ## Terminal Instructions
