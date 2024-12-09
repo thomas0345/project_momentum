@@ -20,4 +20,4 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 EXPOSE 8888 8061
 
 # Default command to first compile LaTeX, then run the Dash app or Jupyter Notebook server
-CMD ["sh", "-c", "pdflatex -output-directory=/app/reports/paper /app/reports/paper/latex_pmp_template.tex && jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root /app/momentum_notebook.ipynb"]
+CMD ["sh", "-c", "pdflatex -output-directory=/app/reports/paper /app/reports/paper/momentum_report.tex && jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root /app/momentum_notebook.ipynb"]
