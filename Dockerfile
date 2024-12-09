@@ -19,8 +19,6 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 # Expose ports for Jupyter and Dash
 EXPOSE 8888 8061
 
-# Run LaTeX report compilation first, then launch Jupyter Notebook
-CMD pdflatex -output-directory=/app/reports /app/reports/momentum_report.tex && \
-    cp /app/reports/*.pdf /app/reports && \
+# Run LaTeX compilation silently and start the Jupyter server
+CMD pdflatex -output-directory=/app/reports/paper /app/reports/paper/latex_pmp_template.tex > /app/reports/latex_output.log && \
     jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root /app/momentum_notebook.ipynb
-
