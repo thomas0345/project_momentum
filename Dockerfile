@@ -16,9 +16,11 @@ COPY . /app/
 # Install Python dependencies
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
-# Expose ports for Jupyter and Dash
-EXPOSE 8888 8061
+# Expose ports for Jupyter
+EXPOSE 8888
 
-# Run LaTeX compilation silently and start the Jupyter server
-CMD pdflatex -output-directory=/app/reports/paper /app/reports/paper/latex_pmp_template.tex > /app/reports/latex_output.log && \
-    jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root /app/momentum_notebook.ipynb
+# Default to show usage instructions
+CMD ["echo", "Usage: docker run <options> <command>. Available commands: paper, presentation, jupyter"]
+
+# Define entrypoints for tasks
+ENTRYPOINT ["/bin/bash", "-c"]

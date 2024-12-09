@@ -28,11 +28,26 @@ third, build a docker image for the project using:
 docker build -t project_momentum .
 ```
 
-fourth, run the docker container using:
+fourth, compile the report using:
 ```bash
-docker run -it --rm -p 127.0.0.1:8888:8888 -p 127.0.0.1:8061:8061 -v $(pwd)/reports:/app/reports project_momentum
-
+docker run -it --rm -v $(pwd)/reports/paper:/app/reports/paper project_momentum \
+"pdflatex -output-directory=/app/reports/paper /app/reports/paper/momentum_report.tex"
 ```
+
+fifth, compile the beamer presentation using:
+```bash
+docker run -it --rm -v $(pwd)/reports/presentation:/app/reports/presentation project_momentum \
+"pdflatex -output-directory=/app/reports/presentation /app/reports/presentation/momentum_presentation.tex"
+```
+
+sixth, launch the jupyter notebook for an interactive walk through using:
+```bash
+docker run -it --rm -p 127.0.0.1:8888:8888 -v $(pwd):/app project_momentum \
+"jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
+```
+
+
+
 This command will:
 <ol>
 <li>Compile the LaTeX report (latex_pmp_template.tex), generating a PDF and storing it in your local folder under /reports/paper.</li>
