@@ -42,7 +42,7 @@ docker run -it --rm -v $(pwd)/reports/presentation:/app/reports/presentation pro
 
 sixth, launch the jupyter notebook for an interactive walk through using:
 ```bash
-docker run -it --rm -p 127.0.0.1:8888:8888 -v $(pwd):/app project_momentum \
+docker run -it --rm -p 127.0.0.1:8888:8888 -p 127.0.0.1:8061:8061 -v $(pwd):/app project_momentum \
 "jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
 ```
 
