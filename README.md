@@ -15,7 +15,7 @@ This project contains code to:
 3. Summarize the results and generate a report and a presentation in LaTeX
 
 ## Prerequisites
-Ensure the Docker is installed on your local machine and that it is running:
+Ensure Docker is installed on your local machine and that it is running:
 - Docker (latest version): [Install Docker](https://docs.docker.com/get-docker/)
 
 ## Terminal Instructions
