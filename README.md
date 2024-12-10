@@ -4,7 +4,9 @@ This project aims to explore cross-sectional momentum strategies in different eq
 
 # Brief Abstract
 
+This figure shows our main result.
 
+![main_result](reports/figures/fig_costs.png)
 
 
 # Installation Guide
