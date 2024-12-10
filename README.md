@@ -1,6 +1,6 @@
 # project_momentum
 
-This project aims to explore momentum strategies in different equity markets in order to identify the best lookback period. Further it incorporates several robustness checks to solidify the results.
+This project aims to explore cross-sectional momentum strategies in different equity markets in order to identify the best lookback period. Further it incorporates several robustness checks to solidify the results.
 
 # Brief Abstract
 
@@ -29,18 +29,12 @@ second, navigate to the project folder using:
 cd project_momentum
 ```
 
-third, grant docker write permissions to the mounted reports directory using:
-```bash
-chmod -R 777 $(pwd)/reports
-```
-
-
-fourth, build a docker image for the project using:
+third, build a docker image for the project using:
 ```bash
 docker build -t project_momentum .
 ```
 
-fifth, compile the report using:
+fourth, compile the report using:
 ```bash
 docker run -it --rm -v $(pwd)/reports/paper:/app/reports/paper project_momentum \
 "pdflatex -output-directory=/app/reports/paper /app/reports/paper/momentum_report.tex && \
@@ -49,7 +43,7 @@ pdflatex -output-directory=/app/reports/paper /app/reports/paper/momentum_report
 pdflatex -output-directory=/app/reports/paper /app/reports/paper/momentum_report.tex"
 ```
 
-sixth, compile the beamer presentation using:
+fifth, compile the beamer presentation using:
 ```bash
 docker run -it --rm -v $(pwd)/reports/presentation:/app/reports/presentation project_momentum \
 "pdflatex -output-directory=/app/reports/presentation /app/reports/presentation/momentum_presentation.tex && \
@@ -57,7 +51,7 @@ pdflatex -output-directory=/app/reports/presentation /app/reports/presentation/m
 pdflatex -output-directory=/app/reports/presentation /app/reports/presentation/momentum_presentation.tex"
 ```
 
-seventh, launch the jupyter notebook for an interactive walk through using:
+sixth, launch the jupyter notebook for an interactive walk through using:
 ```bash
 docker run -it --rm -p 127.0.0.1:8888:8888 -p 127.0.0.1:8061:8061 -v $(pwd):/app project_momentum \
 "jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
@@ -95,8 +89,7 @@ The URL will look like this:    http://127.0.0.1:8888/tree?token=<TOKEN>
      │
      └── presentation                       <- Short presentation with most important findings
          ├── figures                        <- Figures used in the LaTeX report
-         ├── momentum_presentation.tex      <- LaTex code in order to compile PDF presentation
-         └── references.bib                 <- References used in the presentation
+         └── momentum_presentation.tex      <- LaTex code in order to compile PDF presentation
 ```
 
 --------
