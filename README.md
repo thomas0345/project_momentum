@@ -37,13 +37,19 @@ docker build -t project_momentum .
 fourth, compile the report using:
 ```bash
 docker run -it --rm -v $(pwd)/reports/paper:/app/reports/paper project_momentum \
-"pdflatex -output-directory=/app/reports/paper /app/reports/paper/momentum_report.tex"
+"pdflatex -output-directory=/app/reports/paper /app/reports/paper/momentum_report.tex && \
+bibtex /app/reports/paper/momentum_report && \
+pdflatex -output-directory=/app/reports/paper /app/reports/paper/momentum_report.tex && \
+pdflatex -output-directory=/app/reports/paper /app/reports/paper/momentum_report.tex"
 ```
 
 fifth, compile the beamer presentation using:
 ```bash
 docker run -it --rm -v $(pwd)/reports/presentation:/app/reports/presentation project_momentum \
-"pdflatex -output-directory=/app/reports/presentation /app/reports/presentation/momentum_presentation.tex"
+"pdflatex -output-directory=/app/reports/presentation /app/reports/presentation/momentum_presentation.tex && \
+bibtex /app/reports/presentation/momentum_presentation && \
+pdflatex -output-directory=/app/reports/presentation /app/reports/presentation/momentum_presentation.tex && \
+pdflatex -output-directory=/app/reports/presentation /app/reports/presentation/momentum_presentation.tex"
 ```
 
 sixth, launch the jupyter notebook for an interactive walk through using:
