@@ -10,6 +10,9 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
+# Set the openout_any policy to allow LaTeX to write output files anywhere
+ENV openout_any=a
+
 # Copy the entire folder structure into the container
 COPY . /app/
 
