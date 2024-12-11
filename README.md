@@ -1,6 +1,6 @@
 # cross-sectional momentum optimal look back
 
-This project aims to explore cross-sectional momentum strategies in different equity markets in order to identify the best lookback period. Further it incorporates several robustness checks to solidify the results.\
+This project aims to explore cross-sectional momentum strategies in different equity markets in order to identify the best lookback period. Further it incorporates several robustness checks to solidify the results.
 
 Testing various lookback periods, we find that in line with Jegadeesh and Titman (1993), the best performing lookback windows are indeed around the 9-12 month lookback thresholds. Specifically we find that a lookback window of ten months achieves the highest total return (13.05\%) and also the highest Sharpe Ratio of 0.53. Compared to the benchmark achieving a total return of 8.16\% and a Sharpe Ratio of 0.33, we find a significant positive outperformance in our chosen time frame. Further, we find some evidence of the mentioned long-term reversal of momentum strategies, in such a magnitude that some longer lookbacks such as 14, 20 and 23 even underperform the benchmark, as can be seen in the figure below. However there seems not to be a consistent pattern in the sense of the longer the lookback the worse is the performance and hence this leaves room for further research.
 
