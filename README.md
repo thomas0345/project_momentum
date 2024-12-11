@@ -1,13 +1,12 @@
-# project_momentum
+# cross-sectional momentum optimal look back
 
-This project aims to explore cross-sectional momentum strategies in different equity markets in order to identify the best lookback period. Further it incorporates several robustness checks to solidify the results.
+This project aims to explore cross-sectional momentum strategies in different equity markets in order to identify the best lookback period. Further it incorporates several robustness checks to solidify the results.\
 
-# Brief Abstract
-
-This figure shows our main result.
+Testing various lookback periods, we find that in line with Jegadeesh and Titman (1993), the best performing lookback windows are indeed around the 9-12 month lookback thresholds. Further, we find some evidence of the mentioned long-term reversal of momentum strategies, as can be investigated in further detail in our interactive plot launched from our notebook.
 
 ![main_result](reports/figures/fig_costs.png)
 
+We encourage researchers to further develop this project by investigated the conncetion between long-term value interaction with momentum as the reason for the momentum reversal effect, first pointed out by Nagel (2001).
 
 # Installation Guide
 

@@ -43,55 +43,28 @@
 \begin{document}
 \metroset{block=fill}
 
-
-
-\begin{comment}
-Provisional ToC:
-
-1. Data Cleaning (3min) Robert
-1.1 Why we concatenated the data like this.
-1.2 Dealing with NaN (Threshold & Knn-Imputer)
-1.3 Dealing with outliers
-1.4 Handling Class imbalance
-
-2. Feature Selection & Feature Engineering (2min) Thomas
-2.1 Feature Engineering With SGM
-2.2 Feature Selection with Gradient Boosting -> Feature Importance (Sector very important) -> deshalb kein SMOTE da drop nicht möglich
-
-3. Model Fits & Results (3min) Jan
-3.1 Correlation Matrix
-3.2 Results, Scaling , Oversampling, Scorer, 
---> Table paste
-
-4. Discussing Results in light of finance theory (2min) Simon
-4.1 Market unbeatable (differentiate)
-4.2 Fama EMH
-4.2 OVB
-
-\end{comment}
-
-
-
-
-
 \begin{frame}
     \titlepage
 \end{frame}
-\newcommand\AtPagemyUpperLeft[1]{\AtPageLowerLeft{%
-\put(\LenToUnit{0.82\paperwidth},\LenToUnit{0.91\paperheight}){#1}}}
-\AddToShipoutPictureFG{
-  \AtPagemyUpperLeft{{\includegraphics[width=2cm,keepaspectratio]{figures/uzh_logo_text.png}}}
-}%
+
+% Place logo insertion commands outside the frame environments
+\newcommand\AtPagemyUpperLeft[1]{%
+    \AtPageLowerLeft{\put(\LenToUnit{0.82\paperwidth},\LenToUnit{0.91\paperheight}){#1}}%
+}
+\AddToShipoutPictureFG{%
+  \AtPagemyUpperLeft{{\includegraphics[width=2cm,keepaspectratio]{figures/uzh_logo_text.png}}}%
+}
 
 \begin{frame}[t]{Introduction}
     \begin{itemize}
-        \myitem Cross-sectional momentum strategies: Rank assets by past performance - long top performers, short underperformers.
-        \myitem Key Strategy Parameter: Lookback Period
+        \item Cross-sectional momentum strategies: Rank assets by past performance - long top performers, short underperformers.
+        \item Key Strategy Parameter: Lookback Period
         \begin{itemize}
             \item Determines the timeframe for assessing past performance.
             \item Impacts effectiveness by identifying genuine trends versus anomalies.
         \end{itemize}
     \end{itemize}
+
     \textbf{Project Focus:} Analyzes lookback periods up to 24 months for country equity momentum strategies.  
     Implements a long-only strategy targeting top three performers.
 
@@ -100,16 +73,15 @@ Provisional ToC:
 
 \begin{frame}[t]{Momentum Investing Overview}
     \begin{itemize}
-        \myitem Jegadeesh and Titman (1993) found that stocks with strong past returns (3-12 months) tend to keep outperforming, challenging the efficient market hypothesis (Fama, 1970).
-        \myitem This effect has been observed across various asset classes (Asness et al., 2013; Baltas \& Kosowski, 2013).
-        \myitem Explanations for Momentum:
+        \item Jegadeesh and Titman (1993) found that stocks with strong past returns (3-12 months) tend to keep outperforming, challenging the efficient market hypothesis (Fama, 1970).
+        \item This effect has been observed across various asset classes (Asness et al., 2013; Baltas \& Kosowski, 2013).
+        \item Explanations for Momentum:
         \begin{itemize}
-            \item Behavioral: Investor biases, like delayed reactions, lead to price continuation (Barberis et al., 1998; Grinblatt \& Han, 2005).
-            \item Risk-Based: Momentum profits may compensate for systematic risks not captured by traditional models (Bikhchandani et al., 1992).
+            \item \textbf{Behavioral:} Investor biases, like delayed reactions, lead to price continuation (Barberis et al., 1998; Grinblatt \& Han, 2005).
+            \item \textbf{Risk-Based:} Momentum profits may compensate for systematic risks not captured by traditional models (Bikhchandani et al., 1992).
         \end{itemize}
     \end{itemize}
 \end{frame}
-
 
 \begin{frame}[t]{Data}
 We used the \textbf{Yahoo finance API} to pull daily price data on 17 country ETFs: USA, China, Japan, India, Brazil, Canada, Mexico, South Korea, Germany, UK, Australia, Switzerland, Hong Kong, Singapore, Taiwan, Italy, Spain. 
@@ -180,7 +152,6 @@ We also pull the data for the risk free rate from Yahoo finance, taking the 3-mo
    %% \caption[caption]{Sustainable Growth Model according to Higgins}
     \label{fig_bm}
     \end{figure}
-    
 \end{frame}
 
 \begin{frame}[t]{Empirical results}
@@ -190,17 +161,17 @@ We also pull the data for the risk free rate from Yahoo finance, taking the 3-mo
    %% \caption[caption]{Sustainable Growth Model according to Higgins}
     \label{fig_costs}
     \end{figure}
-    
 \end{frame}
 
 \begin{frame}[t]{Conclusion}
     \begin{itemize}
-        \myitem Shorter lookback periods (up to 12 months) generally outperform longer periods, consistent with literature on diminishing predictive power of extended lookbacks.
-        \myitem Best momentum strategies outperform passive benchmarks, even after accounting for transaction costs. Momentum strategies incur higher turnover and transaction costs than benchmarks but still deliver significant risk-adjusted returns.
+        \item Shorter lookback periods (up to 12 months) generally outperform longer periods, consistent with literature on diminishing predictive power of extended lookbacks.
+        \item Best momentum strategies outperform passive benchmarks, even after accounting for transaction costs. Momentum strategies incur higher turnover and transaction costs than benchmarks but still deliver significant risk-adjusted returns.
     \end{itemize}
 
     This study confirms momentum as a reliable and effective strategy for country ETFs.
 \end{frame}
+
 
 \begin{frame}[t]{References}
     \begin{figure}[t!]\centering
