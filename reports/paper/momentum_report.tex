@@ -160,7 +160,7 @@ Italy       &  34.04 &   8.76 & 19.15 & 26.96 & 31.43 & 41.42 & 58.13 \\
 Spain       &  50.46 &  11.57 & 30.96 & 41.33 & 48.00 & 57.77 & 90.81 \\
 \hline
 \end{tabular}
-\caption{Price statistics of Country ETFs}
+\caption{Price statistics of the country ETFs}
 \label{tab:summary_stats_price}
 \end{table}
 
@@ -191,7 +191,7 @@ Italy        & 0.72          & 5.16         & -24.75       & -2.17         & 0.6
 Spain        & -0.04         & 6.43         & -16.87       & -3.70         & 0.40          & 3.69          & 26.64       \\
 \bottomrule
 \end{tabular}
-\caption{Monthly Returns statistics of Country ETFs in \%}
+\caption{Descriptive statistics of monthly returns of country ETFs in \%}
 \label{tab:summary_stats_return}
 \end{table}
 
@@ -208,7 +208,7 @@ In our strategy we also use the risk free rate, 3-month US Treasury rate, which 
   Rf & 0.19 & 0.18 & 0.00 & 0.01 & 0.15 & 0.33 & 0.51 \\
 \bottomrule
 \end{tabular}
-\caption{Risk free rate statistics in \% }
+\caption{Risk free rate descriptive statistics in \% }
 \label{tab:summary_stats_rf}
 \end{table}
 
@@ -260,9 +260,9 @@ Using this approach one can easily replicate our calculations and verify the res
 \newpage
 \section{Empirical Results}
 
-The code of the project is extensively parametarized in order for the user to be able to run different country ETF momentum strategies. However, in this paper we show our base strategy that is a long-only momentum strategy with the investment strategy as shown in Table~\ref{tab:country_etfs}. It takes 3 long legs - goes long the three best-performing country ETFs. It searches for best lookback periods in the range of 1 to 24 months. This means that when we check for the 16th lookback window we take return data from the entire 16-month lookback period (from 1 to 16 months back) not just the 16th previous month.  It also takes transaction costs of 10 basis points. All these parameters are adjustable in the code if the user so wishes.
+The code of the project is extensively parameterized in order for the user to be able to run different country ETF momentum strategies. However, in this paper we show our base strategy that is a long-only momentum strategy with the investment strategy as shown in Table~\ref{tab:country_etfs}. It takes 3 long legs - goes long the three best-performing country ETFs. It searches for best lookback periods in the range of 1 to 24 months. This means that when we check for the 16th lookback window we take return data from the entire 16-month lookback period (from 1 to 16 months back) not just the 16th previous month.  It also takes transaction costs of 10 basis points. All these parameters are adjustable in the code if the user so wishes.
 
-In Table~\ref{table:performance1} and Table~\ref{table:performance2}, we present the main summary statistics for each of the lookback windows compared to the benchmark. We can see that in all but two cases momentum beats the becnhmark in terms of average total return over the period. In risk adjusted returns, benchamrk beats nine of the lookback strategies, but still there are many momentum lookback strategies that perform much better. The strategies tend to be more volatile and have bigger extremes both in the positive and negative direction.
+In Table~\ref{table:performance1} and Table~\ref{table:performance2}, we present the main summary statistics for each of the lookback windows compared to the benchmark. We can see that in all but two cases momentum beats the becnhmark in terms of average total return over the period. In risk adjusted returns, benchmark beats nine of the lookback strategies, but still there are many momentum lookback strategies that perform much better. The strategies tend to be more volatile and have bigger extremes both in the positive and negative direction.
 
 \begin{table}[ht]
 \centering
@@ -302,19 +302,19 @@ Lookback & {Avg Total Return} & {Avg XS Return} & {Std XS Return} & {Sharpe Rati
 Benchmark & 8.16  & 5.31  & 0.16  & 0.33  \\
 \bottomrule
 \end{tabular}
-\caption{Performance Metrics for Different Lookback Periods (Part 1)}
+\caption{Performance metrics for different Lookback periods}
 \label{table:performance1}
 \end{table}
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{@{}c
-                S[table-format=2.2]
-                S[table-format=2.2]
-                S[table-format=1.2]
-                S[table-format=1.2]@{}}
+\begin{tabular}{@{}l
+                c
+                c
+                c
+                c@{}}
 \toprule
-Lookback & {Worst} & {Best} & {Skewness} & {Kurtosis} \\
+Lookback & Worst  & Best   & Skewness & Kurtosis \\
 \midrule
 1        & -32.72 & 22.39  & -0.86    & 8.07     \\
 2        & -25.28 & 22.39  & -0.09    & 4.67     \\
@@ -344,9 +344,10 @@ Lookback & {Worst} & {Best} & {Skewness} & {Kurtosis} \\
 Benchmark & -20.19 & 13.71  & -0.51    & 3.12     \\
 \bottomrule
 \end{tabular}
-\caption{Performance Metrics for Different Lookback Periods (Part 2)}
+\caption{Best and worst monthly returns together with overall skew and kurtosis for different lookback periods}
 \label{table:performance2}
 \end{table}
+
 
 \clearpage
 
@@ -355,7 +356,7 @@ To visualize the performance outlined in Table~\ref{table:performance1} and Tabl
 \begin{figure}[h]
     \centering
     \includegraphics[width=15cm]{figures/fig_bm.pdf}
-    \caption{Comparison of best and worst performing lookback strategies and the benchmark}
+    \caption{Comparison of the two best and two worst performing lookback strategies and the benchmark without transactions costs}
     \label{fig:bm}
 \end{figure}
 
@@ -366,7 +367,7 @@ In Figure~\ref{fig:costs} we display the comparison of strategy and benchmark pe
 \begin{figure}[h]
     \centering
     \includegraphics[width=15cm]{figures/fig_costs.pdf}
-    \caption{Comparison of best performing lookback strategies and the benchmark both with and without trading costs}
+    \caption{Comparison of best performing lookback strategies and the benchmark both with and without transaction costs}
     \label{fig:costs}
 \end{figure}
 
